@@ -15,6 +15,13 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(iLogin);
         }
     }
+    protected class BtnRegisterListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            Intent iAPI = new Intent(v.getContext(),TestActivity.class);
+            startActivity(iAPI);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
         Button btnLogin = (Button)this.findViewById(R.id.btn_signin);
         btnLogin.setOnClickListener(new BtnLoginListener());
+        Button btnRegis = (Button)this.findViewById(R.id.btn_signup);
+        btnRegis.setOnClickListener(new BtnRegisterListener());
+
     }
 }
